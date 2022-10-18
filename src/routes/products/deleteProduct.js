@@ -5,7 +5,7 @@ module.exports = (app) => {
   app.delete('/api/products/:id', auth, (req, res) => {
     Product.findByPk(req.params.id).then(product => {
       if(product === null) {
-          const message = `Product with id ${req.params.id} doesn't exist. Please try with a valid id.`
+          const message = `Le produit avec l'identifiant ${req.params.id} n'existe pas. Merci d'entrer un identifiant valide.`
           return res.status(404).json({ message })
         }
       const productDeleted = product;
@@ -13,12 +13,12 @@ module.exports = (app) => {
         where: { id: product.id }
       })
       .then(_ => {
-        const message = `Product with id ${productDeleted.id} successfully deleted.`
+        const message = `Le produit avec l'identifiant ${productDeleted.id} a été supprimé.`
         res.json({message, data: productDeleted })
       })
     })
     .catch(error => {
-      const message = `Product couldn't be deleted. Please try again in a moment.`
+      const message = `Le produit n'a pas pu être supprimé. Merci de réessayer ultérieurement.`
       res.status(500).json({ message, data: error})
     })
   })

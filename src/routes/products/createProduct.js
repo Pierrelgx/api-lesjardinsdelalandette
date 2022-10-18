@@ -6,7 +6,7 @@ module.exports = (app) => {
   app.post('/api/products', auth, (req, res) => {
     Product.create(req.body)
       .then(product => {
-        const message = `Product ${req.body.name} successfully created.`
+        const message = `Produit ${req.body.name} créé avec succès.`
         res.json({ message, data: product })
       })
       .catch(error => {
@@ -16,7 +16,7 @@ module.exports = (app) => {
         if(error instanceof UniqueConstraintError) {
           return res.status(400).json({ message: error.message, data: error })
         }
-        const message = `Product couldn't be created due to server error. Try again later.`
+        const message = `Le produit n'a pas pu être créé à cause d'une erreur système. Merci de réessayer ultérieurement.`
         res.status(500).json({ message, data: error })
       })
   })

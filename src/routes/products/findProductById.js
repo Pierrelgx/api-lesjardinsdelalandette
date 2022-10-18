@@ -6,14 +6,14 @@ module.exports = (app) => {
     Product.findByPk(req.params.id)
       .then(product => {
         if(product === null) {
-          const message = `Product with id ${req.params.id} doesn't exist. Please try again with another id.`
+          const message = `Le produit avec l'identifiant ${req.params.id} n'existe pas. Essayez avec un autre identifiant.`
           return res.status(404).json({ message })
         }
-        const message = `Product with id ${req.params.id} was found.`
+        const message = `Le produit avec l'identifiant ${req.params.id} a été trouvé.`
         res.json({ message, data: product })
       })
       .catch(error => {
-        const message = `Product with id ${req.params.id} couldn't be found. Please try again in a moment.`
+        const message = `Le produit avec l'identifiant ${req.params.id} n'a pas pu être trouvé. Merci de réessayer ultérieurement.`
         res.status(500).json({ message, data: error })
       })
   })

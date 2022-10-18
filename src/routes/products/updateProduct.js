@@ -11,10 +11,10 @@ module.exports = (app) => {
     .then(_ => {
       return Product.findByPk(id).then(product => {
         if(product === null) {
-          const message = `Product with id ${id} doesn't exist. Please try with a valid id.`
+          const message = `Le produit avec l'identifiant ${id} n'existe pas. Essayez avec un identifiant valide.`
           return res.status(404).json({ message })
         }
-        const message = `Product ${product.name} successfully updated.`
+        const message = `Le produit ${product.name} a été mis à jour.`
         res.json({message, data: product })
       })
     })
@@ -25,7 +25,7 @@ module.exports = (app) => {
       if(error instanceof UniqueConstraintError) {
           return res.status(400).json({ message: error.message, data: error })
       }
-      const message= `Product couldn't be updated. Please try again in a moment.`
+      const message= `Le produit n'a pas pu être modifié. Merci de réessayer ultérieurement.`
       res.status(500).json({ message, data: error })
     })
   })

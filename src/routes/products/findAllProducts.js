@@ -9,7 +9,7 @@ module.exports = (app) => {
       const limit = parseInt(req.query.limit) || 5
 
       if(name.length <= 2) {
-        const message = 'Please enter at least 3 characters in search field.'
+        const message = 'Merci d\'entrer un minimum de 3 caractères dans le champ de recherche.'
         return res.status(400).json({ message })
       }
 
@@ -24,17 +24,17 @@ module.exports = (app) => {
         // order: [['name', 'DESC']]
       })
       .then(({count, rows}) => {
-        const message = `There are ${count} that contain ${name}.`
+        const message = `Il y a ${count} produits qui contiennent ${name}.`
         res.json({ message, data: rows })
       })
     } else {
     Product.findAll()
       .then(products => {
-        const message = 'Products list fetched !'
+        const message = 'Liste de produits récupérée !'
         res.json({ message, data: products })
       })
       .catch(error => {
-        const message = 'Cannot fetch Products list. Please try again in a moment.'
+        const message = 'Impossible de récupérer la liste des produits. Merci de réessayer ultérieurement.'
         res.status(500).json({ message, data: error })
       })
     }
