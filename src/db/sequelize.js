@@ -30,7 +30,7 @@ const Product = ProductModel(sequelize, DataTypes)
 const User = UserModel(sequelize, DataTypes)
 
 const initDb = () => {
-  return sequelize.sync({force: true}).then(_ => {
+  return sequelize.sync().then(_ => {
     products.map(product => {
       Product.create({
         name: product.name,
