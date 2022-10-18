@@ -1,0 +1,19 @@
+{
+  "name": "api-lesjardinsdelalandette",
+  "version": "1.0.0",
+  "description": "BackEnd for fruit and vegetables eshop",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Pierrelgx/api-lesjardinsdelalandette.git"
+  },
+  "author": "LEGOUX Pierre KOUNINEF Lois",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Pierrelgx/api-lesjardinsdelalandette/issues"
+  },
+  "homepage": "https://github.com/Pierrelgx/api-lesjardinsdelalandette#readme"
+}
