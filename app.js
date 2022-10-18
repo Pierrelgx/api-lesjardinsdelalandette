@@ -14,6 +14,13 @@ app
 
 sequelize.initDb()
 
+require('./src/routes/products/findAllProducts')(app)
+require('./src/routes/products/findProductById')(app)
+
+require('./src/routes/products/createProduct')(app)
+require('./src/routes/products/updateProduct')(app)
+require('./src/routes/products/deleteProduct')(app)
+
 require('./src/routes/users/login')(app)
 require('./src/routes/users/signup')(app)
 
