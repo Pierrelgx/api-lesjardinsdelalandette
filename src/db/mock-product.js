@@ -1,10 +1,10 @@
-export default items = [
+const products = [
   {
    id: 1,
    name: "Brocolis",
    price: 5,
    picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-   types: ["Légume"],
+   types: "Légume",
    created: new Date()
   },
   {
@@ -12,7 +12,7 @@ export default items = [
     name: "Abricot",
     price: 4,
     picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-    types: ["Fruit"],
+    types: "Fruit",
     created: new Date()
    },
    {
@@ -20,7 +20,7 @@ export default items = [
     name: "Boite de 12",
     price: 5.50,
     picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-    types: ["Oeuf"],
+    types: "Oeuf",
     created: new Date()
    },
    {
@@ -28,9 +28,9 @@ export default items = [
     name: "Miel de fleur",
     price: 13,
     picture: "https://assets.pokemon.com/assets/cms2/img/pokedex/detail/001.png",
-    types: ["Miel"],
+    types: "Miel",
     created: new Date()
    },
-
- ];
+]
+ module.exports = products;
    

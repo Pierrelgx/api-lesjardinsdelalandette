@@ -1,6 +1,6 @@
 const validTypes = ['Legume', 'Fruit', 'Miel', 'Oeuf'];
 
-export default (sequelize, DataTypes) => {
+module.exports = (sequelize, DataTypes) => {
 	return sequelize.define('Product', {
 		id: {
 			type: DataTypes.INTEGER,
@@ -32,17 +32,7 @@ export default (sequelize, DataTypes) => {
 		},
 		types: {
 			type: DataTypes.STRING,
-			allowNull: false,
-			validate: {
-				isTypesValid(value) {
-					if(!value) {
-						throw new Error('Le produit doit avoir un type.')
-					}
-					if(!validTypes. includes(type)) {
-						throw new Error(`Le produit doit être de type ${validTypes}.`)
-					}
-				}
-			}
+			allowNull: false
 		},
 		picture: {
 			type: DataTypes.STRING,
